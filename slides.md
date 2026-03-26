@@ -241,19 +241,103 @@ layout: center
 
 # Infrastructure Architecture
 
-## [Add Architecture Name]
+## Databricks Lakehouse Pipeline
 
-```
-[Add your architecture details or diagram]
+<div class="flex items-center justify-center gap-8 my-8">
+  <!-- Data Source -->
+  <div 
+    v-motion
+    :initial="{ opacity: 0, x: -100 }"
+    :enter="{ opacity: 1, x: 0, transition: { duration: 600 } }"
+    class="text-center"
+  >
+    <div class="bg-blue-100 p-4 rounded-lg mb-2">📊 Data Sources</div>
+    <small>(APIs, DBs)</small>
+  </div>
 
-Example flow:
-Data Source → Ingestion Layer → Processing → Storage → Analytics
-```
+  <!-- Arrow -->
+  <div 
+    v-motion
+    :initial="{ opacity: 0, scaleX: 0 }"
+    :enter="{ opacity: 1, scaleX: 1, transition: { duration: 600, delay: 200 } }"
+    class="text-2xl"
+  >
+    →
+  </div>
 
-**Key Components:**
-- [Component 1]
-- [Component 2]
-- [Component 3]
+  <!-- Databricks Logo/Processing -->
+  <div 
+    v-motion
+    :initial="{ opacity: 0, scale: 0.5 }"
+    :enter="{ opacity: 1, scale: 1, transition: { duration: 600, delay: 400 } }"
+    class="text-center"
+  >
+    <div class="bg-red-100 p-4 rounded-lg mb-2 font-bold">⚡ Databricks</div>
+    <small>(ETL & Transform)</small>
+  </div>
+
+  <!-- Arrow -->
+  <div 
+    v-motion
+    :initial="{ opacity: 0, scaleX: 0 }"
+    :enter="{ opacity: 1, scaleX: 1, transition: { duration: 600, delay: 600 } }"
+    class="text-2xl"
+  >
+    →
+  </div>
+
+  <!-- Storage -->
+  <div 
+    v-motion
+    :initial="{ opacity: 0, x: 100 }"
+    :enter="{ opacity: 1, x: 0, transition: { duration: 600, delay: 800 } }"
+    class="text-center"
+  >
+    <div class="bg-green-100 p-4 rounded-lg mb-2">🗄️ Delta Lake</div>
+    <small>(Unified Storage)</small>
+  </div>
+</div>
+
+<!-- Second Row -->
+<div class="flex items-center justify-center gap-8 my-8">
+  <!-- Arrow Down -->
+  <div 
+    v-motion
+    :initial="{ opacity: 0 }"
+    :enter="{ opacity: 1, transition: { duration: 600, delay: 1000 } }"
+    class="text-2xl text-gray-400"
+  >
+    ↓
+  </div>
+</div>
+
+<!-- Consumers -->
+<div class="flex items-center justify-center gap-8">
+  <div 
+    v-motion
+    :initial="{ opacity: 0, y: 50 }"
+    :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 1200 } }"
+    class="text-center"
+  >
+    <div class="bg-purple-100 p-3 rounded mb-2">📈 Analytics</div>
+  </div>
+  <div 
+    v-motion
+    :initial="{ opacity: 0, y: 50 }"
+    :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 1400 } }"
+    class="text-center"
+  >
+    <div class="bg-purple-100 p-3 rounded mb-2">🤖 ML/AI</div>
+  </div>
+  <div 
+    v-motion
+    :initial="{ opacity: 0, y: 50 }"
+    :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 1600 } }"
+    class="text-center"
+  >
+    <div class="bg-purple-100 p-3 rounded mb-2">⚙️ Operations</div>
+  </div>
+</div>
 
 ---
 
